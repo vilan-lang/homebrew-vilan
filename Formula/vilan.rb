@@ -3,39 +3,41 @@
 # release workflow. Edit the script, never this file.
 class Vilan < Formula
   desc "Language toolchain for vilan: the compiler and the language server"
-  homepage "https://vilan-lang.github.io/vilan/"
-  version "0.14.0"
+  homepage "https://vilan-lang.org/docs/"
+  version "0.18.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     on_arm do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.14.0/vilan-aarch64-apple-darwin.tar.gz"
-      sha256 "f4ccc413449dddd334549962719ba59f10e7091bc8b91f1d98bd2b8ef2a05343"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.18.0/vilan-aarch64-apple-darwin.tar.gz"
+      sha256 "7df853a4ca42182f469c43580c7af2ba7afe68459e6cbe2fe8c01b9ebef336f5"
     end
 
     on_intel do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.14.0/vilan-x86_64-apple-darwin.tar.gz"
-      sha256 "491e6cc1cd945c4ec36d453d537a14c78d8d5a1a36d7175f57377f12bc275d23"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.18.0/vilan-x86_64-apple-darwin.tar.gz"
+      sha256 "3ac57cdf6c915e71c1d992f61b692a2b41bfc0e413c5c1c217494ca4a8742e54"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.14.0/vilan-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "3e85a1f663efbcb610a88028aa0844e5ff3fbaf8010dfcf6d808c882d1639b68"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.18.0/vilan-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "40e73a38396fa9548fb523bebff4dc6ec3cda393dc1c363e4d2f0d7935f564e6"
     end
 
     on_intel do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.14.0/vilan-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "644d7df705d8b4ea92b9c912c6602d8ea94f553c34b21f5ee5571bc701f5f6d0"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.18.0/vilan-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "c240b4d68874f673d4d0947aecf124ccf9c784afeabe84b53a247bcd1cb8e545"
     end
   end
 
   def install
     bin.install "vilan", "vilan-lsp"
     # Both licenses travel with the binaries they cover: the archive carries
-    # them, and redistributing under either one means shipping its text.
+    # them, and redistributing under either one means shipping its text. The
+    # third-party notices cover the statically linked crates the same way.
     prefix.install "LICENSE-MIT", "LICENSE-APACHE"
+    prefix.install "THIRD-PARTY-NOTICES.txt" if File.exist?("THIRD-PARTY-NOTICES.txt")
   end
 
   test do
