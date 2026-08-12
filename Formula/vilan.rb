@@ -4,30 +4,30 @@
 class Vilan < Formula
   desc "Language toolchain for vilan: the compiler and the language server"
   homepage "https://vilan-lang.org/docs/"
-  version "0.33.0"
+  version "0.34.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     on_arm do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.33.0/vilan-aarch64-apple-darwin.tar.gz"
-      sha256 "b32a460b049dae07a529070cbd73f93cc485d3d75c748fbca42217538b5ed1a3"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.34.0/vilan-aarch64-apple-darwin.tar.gz"
+      sha256 "7bad52158aa50d5370738193178b9d32196b5dbbd938272b36130f29e0bddc62"
     end
 
     on_intel do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.33.0/vilan-x86_64-apple-darwin.tar.gz"
-      sha256 "0af00dd21a5f601169750cff0b24ffe2a59a2642f607acee921a8b4297718cdb"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.34.0/vilan-x86_64-apple-darwin.tar.gz"
+      sha256 "209d52283b6e64ec9978f29383e31ad1b6235decb8f49f112f139bef2b9e2d38"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.33.0/vilan-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "f5944e3a9561e693326b003eb297b7f6b2c90e21f5c1f2a1337120b3ad9d3ce2"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.34.0/vilan-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "92fdac14a016c177955834628e9b4c903269441df6a10137573e75351b4ac3d0"
     end
 
     on_intel do
-      url "https://github.com/vilan-lang/vilan/releases/download/v0.33.0/vilan-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "cd03e2625bd9893f9297065d67fa456a8df2420c0c7c5c7b52f69150d76f4321"
+      url "https://github.com/vilan-lang/vilan/releases/download/v0.34.0/vilan-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "38e809803a2ba62aee55f89ce9feec8695479b3b2062b6c5141014686cda1a36"
     end
   end
 
